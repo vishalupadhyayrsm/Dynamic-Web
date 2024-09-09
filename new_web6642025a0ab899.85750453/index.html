@@ -1,0 +1,222 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="index.css" />
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr); /* Fixed columns */
+      grid-gap: 10px;
+    }
+    .cell {
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .chart-container {
+      width: 100%;
+      height: auto; /* You can adjust the height as needed */
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-container" id="cell-values"><div class='cell' style='grid-column: span 5; grid-row: 1 / span 4;'><h3 style='text-align:center'>Element: 1</h3><div class='chart-container' id='chart_1'></div><br></div><div class='cell' style='grid-column: span 5; grid-row: 5 / span 6;'><h3 style='text-align:center'>Element: 2</h3><div class='chart-container' id='chart_2'></div><br></div><div class='cell' style='grid-column: span 5; grid-row: 1 / span 4;'><h3 style='text-align:center'>Element: 3</h3><div class='chart-container' id='chart_3'></div><br></div><div class='cell' style='grid-column: span 2; grid-row: 1 / span 1;'><h3 style='text-align:center'>Element: 6</h3></div><div class='cell' style='grid-column: span 2; grid-row: 3 / span 1;'><h3 style='text-align:center'>Element: 6</h3></div><div class='cell' style='grid-column: span 5; grid-row: 10 / span 0;'><h3 style='text-align:center'>Element: 7</h3><div class='chart-container' id='chart_7'></div><br></div><div class='cell' style='grid-column: span 2; grid-row: 10 / span 0;'><h3 style='text-align:center'>Element: 8</h3></div><div class='cell' style='grid-column: span 7; grid-row: 5 / span 6;'><h3 style='text-align:center'>Element: 11</h3></div></div>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="index.js"></script>
+<script>
+
+        function fetchDataAndUpdateChart_1() {
+            fetch('')
+              .then(response => response.text()) 
+              .then(data => {
+                var xData = data.split(',').map(parseFloat); 
+                var yData = data.split(',').map(parseFloat);
+                console.log(yData);
+                var plotData = [];
+                
+                switch ('bar') {
+                  case 'scatter':
+                    plotData.push({ x: xData, y: yData, type: 'scatter' });
+                    break;
+                  case 'bar':
+                    plotData.push({ x:['giraffes', 'orangutans', 'monkeys'], y: [20, 14, 23], type: 'bar' });
+                    break;
+                case 'line':
+                    plotData.push({ x: xData, y: yData, type: 'line' });
+                    break;
+                case 'pie':
+                    plotData.push({ x: xData, y: yData, type: 'pie' });
+                    break;
+                default:
+                break;    
+                }
+        
+                var layout_1 = {
+                  title: 'Bar Chart',
+                  xaxis: {
+                    title: 'x axis',
+                  },
+                  yaxis: {
+                    title: 'y axis',
+                  },
+                  showlegend: true,
+                };
+        
+                Plotly.newPlot('chart_1', plotData, layout_1, {responsive: true});
+              })
+              .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fetch data and update chart initially
+        fetchDataAndUpdateChart_1();
+
+        // Set interval to fetch data and update chart every 5 seconds (adjust as needed)
+        setInterval(fetchDataAndUpdateChart_1, 5000); // Update every 5 seconds
+        
+        function fetchDataAndUpdateChart_2() {
+            fetch('https://lab40.in/dynamicweb/data/line.php')
+              .then(response => response.text()) 
+              .then(data => {
+                var xData = data.split(',').map(parseFloat); 
+                var yData = data.split(',').map(parseFloat);
+                console.log(yData);
+                var plotData = [];
+                
+                switch ('line') {
+                  case 'scatter':
+                    plotData.push({ x: xData, y: yData, type: 'scatter' });
+                    break;
+                  case 'bar':
+                    plotData.push({ x:['giraffes', 'orangutans', 'monkeys'], y: [20, 14, 23], type: 'bar' });
+                    break;
+                case 'line':
+                    plotData.push({ x: xData, y: yData, type: 'line' });
+                    break;
+                case 'pie':
+                    plotData.push({ x: xData, y: yData, type: 'pie' });
+                    break;
+                default:
+                break;    
+                }
+        
+                var layout_2 = {
+                  title: 'Line Chart',
+                  xaxis: {
+                    title: 'x axis',
+                  },
+                  yaxis: {
+                    title: 'y axis',
+                  },
+                  showlegend: true,
+                };
+        
+                Plotly.newPlot('chart_2', plotData, layout_2, {responsive: true});
+              })
+              .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fetch data and update chart initially
+        fetchDataAndUpdateChart_2();
+
+        // Set interval to fetch data and update chart every 5 seconds (adjust as needed)
+        setInterval(fetchDataAndUpdateChart_2, 5000); // Update every 5 seconds
+        
+        function fetchDataAndUpdateChart_3() {
+            fetch('https://lab40.in/dynamicweb/data/pie.php')
+              .then(response => response.text()) 
+              .then(data => {
+                var xData = data.split(',').map(parseFloat); 
+                var yData = data.split(',').map(parseFloat);
+                console.log(yData);
+                var plotData = [];
+                
+                switch ('pie') {
+                  case 'scatter':
+                    plotData.push({ x: xData, y: yData, type: 'scatter' });
+                    break;
+                  case 'bar':
+                    plotData.push({ x:['giraffes', 'orangutans', 'monkeys'], y: [20, 14, 23], type: 'bar' });
+                    break;
+                case 'line':
+                    plotData.push({ x: xData, y: yData, type: 'line' });
+                    break;
+                case 'pie':
+                    plotData.push({ x: xData, y: yData, type: 'pie' });
+                    break;
+                default:
+                break;    
+                }
+        
+                var layout_3 = {
+                  title: 'Pie Chart',
+                  xaxis: {
+                    title: 'x axis',
+                  },
+                  yaxis: {
+                    title: 'y axis',
+                  },
+                  showlegend: true,
+                };
+        
+                Plotly.newPlot('chart_3', plotData, layout_3, {responsive: true});
+              })
+              .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fetch data and update chart initially
+        fetchDataAndUpdateChart_3();
+
+        // Set interval to fetch data and update chart every 5 seconds (adjust as needed)
+        setInterval(fetchDataAndUpdateChart_3, 5000); // Update every 5 seconds
+        
+        function fetchDataAndUpdateChart_7() {
+            fetch('')
+              .then(response => response.text()) 
+              .then(data => {
+                var xData = data.split(',').map(parseFloat); 
+                var yData = data.split(',').map(parseFloat);
+                console.log(yData);
+                var plotData = [];
+                
+                switch ('pie') {
+                  case 'scatter':
+                    plotData.push({ x: xData, y: yData, type: 'scatter' });
+                    break;
+                  case 'bar':
+                    plotData.push({ x:['giraffes', 'orangutans', 'monkeys'], y: [20, 14, 23], type: 'bar' });
+                    break;
+                case 'line':
+                    plotData.push({ x: xData, y: yData, type: 'line' });
+                    break;
+                case 'pie':
+                    plotData.push({ x: xData, y: yData, type: 'pie' });
+                    break;
+                default:
+                break;    
+                }
+        
+                var layout_7 = {
+                  title: '',
+                  xaxis: {
+                    title: '',
+                  },
+                  yaxis: {
+                    title: '',
+                  },
+                  showlegend: true,
+                };
+        
+                Plotly.newPlot('chart_7', plotData, layout_7, {responsive: true});
+              })
+              .catch(error => console.error('Error fetching data:', error));
+        }
+
+        // Fetch data and update chart initially
+        fetchDataAndUpdateChart_7();
+
+        // Set interval to fetch data and update chart every 5 seconds (adjust as needed)
+        setInterval(fetchDataAndUpdateChart_7, 5000); // Update every 5 seconds
+        
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+This documentation conatin all the information that will eleborate how to create dynamic website based on user input. 
+The input given by user that will follow a specifc structure and that structure is given below. 
+
+
+m=15,n= 12,
+element=1,r1=1,r2=4,col1=1,col2=5,chart=bar,url=https://lab40.in/dynamicweb/bar.php,refresh=5,text="",
+element=6,r1=1,r2=1,col1=6,col2=7,chart=,url=,refresh=3,text=Bar Chart and Pie Chart,
+element=10,r1=9,r2=9,col1=6,col2=7,chart=,url=,refresh=3,text=PHP,  
+
+
+m  =  No of rows 
+n  = No of columns
+
+element =>  elemnent is nothis just a no of information user want to show in the websiets.
+
+(r1 and r2 show which row user want to merge and col1 and col2 show which column user want to merge)
+r1 => Starting row 
+r2 => Ending row 
+col1 => Starting column
+col2 => Ending column
+
+
+chart => Chart type (Means which type of chart user want to display in webpage)
+url => where the user will get the data
+refresh => After many second user want to get the data rom url (url interval)
+text => The text user want to show in the web
+
+If user want to pass the chart then user have to leave text blank and if user want ot display the chart then 
+user have to leave text blank. 
+
+////////////////////////////////////////////////////////////////////////    
+This section will eleborate that how the data will store in txt file (chart text file)
+
+In every chart text file data shoud be store in format like (10,20,30,40)
+
+=========================   Bar Chart =================
+in bar chart  y value will be the given data and x value 
+
+========================= pie Chart =================
+in pie chart value = y and label will be x value 
+
+========================= line chart =================
+in line chart y will be data point and x will be automatically  set
+
+========================= scatter chart =================
+in scatter chart y will be data point and x will be automatically  set
+
+========================= bubble chart ================= 
+in bubble chart y will be data point x  will be automatically set
+
+========================= box chart =================
+in box chart data will be y 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
