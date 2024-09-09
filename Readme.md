@@ -34,10 +34,10 @@ Make sure you have the following installed:
    ```
 
 2. Edit The csv fiel based on your Requirement
-   > 1. M and N Defien the number of rows and columns you want to create on the webpage.
-   > 2. Define the element and then define the row and coulmn.
-   > 3. Now define the chart type, chart title , xAxis, yAxis and the fetching the dat abased on intervla and following the data URl.
-   > 4. User can add teh 3d model also for dispalying the Digital Twin.
+   > 1. M and N Define the number of rows and columns you want to create on the webpage.
+   > 2. Define the no of element and then define the row and coulmn respectevly (Assume as matrix).
+   > 3. Now define the chart type, chart title , xAxis, yAxis and the fetching the dat abased on interval and following the data URl.
+   > 4. User can add the 3d model also for dispalying the Digital Twin.
 
 ### Author
 
@@ -55,8 +55,6 @@ Vishal Kumar Upadhyay
 2. <img src="https://upload.wikimedia.org/wikipedia/commons/8/8a/Plotly-logo.png" width="24" alt="CSS Icon"> Plotly Js
 
 ### Flow Chart
-
-## LIMS Flowchart
 
 ```mermaid
 graph TD;
