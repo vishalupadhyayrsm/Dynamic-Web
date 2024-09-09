@@ -58,10 +58,14 @@ Vishal Kumar Upadhyay
 
 ```mermaid
 graph TD;
-    A[Dynamic Digital Twin] --> B[Csv File Data]
-    B --> C[HTML]
-    B --> D[CSS]
-    B --> E[JavaScript]
-    E --> F[Three.js]
-    E --> G[Plotly.js]
+    A[Csv File] --> B[HTML]
+    A --> C[CSS]
+    A --> D[JavaScript]
+    C --> F[Dynamic Digital Twin]
+    D --> F
+    B --> F
+    G --> F
+    H --> F
+    A --> G[Plotly Js]
+    A --> H[Three Js]
 ```
