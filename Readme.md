@@ -29,8 +29,8 @@ Make sure you have the following installed:
 1. Clone the repository:
 
    ```bash
-   git clone <repository_url>
-   cd dynamic-web
+   git clone git@github.com:vishalupadhyayrsm/Dynamic-Web.git
+   cd Dynamic-Web
    ```
 
 2. Edit The csv fiel based on your Requirement
